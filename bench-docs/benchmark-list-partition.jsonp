@@ -1,0 +1,19 @@
+receiveJsonpData({
+"cols": [
+{"label": "method", "type": "string"},
+{"label": "Average time [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC time [s]", "type": "number"},
+{"label": "GC average [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC calls", "type": "number"},
+{"label": "benchmark rounds", "type": "number"},
+{"label": "warmup rounds", "type": "number"},
+{"label": "Total benchmark time", "type": "number"},
+{"label": "Total warmup time", "type": "number"}
+],
+"rows": [
+{"c": [{"v": "test_bench_partition_vector"}, {"v": 0.12}, {"v": 0.07}, {"v": 0.4}, {"v": 0.0}, {"v": 0.0}, {"v": 3}, {"v": 10}, {"v": 5}, {"v": 1.2}, {"v": 0.99}]},
+{"c": [{"v": "test_bench_partition_array_list"}, {"v": 0.1}, {"v": 0.03}, {"v": 0.33}, {"v": 0.0}, {"v": 0.0}, {"v": 8}, {"v": 10}, {"v": 5}, {"v": 1.02}, {"v": 0.71}]},
+{"c": [{"v": "test_bench_partition_linked_list"}, {"v": 0.1}, {"v": 0.02}, {"v": 0.28}, {"v": 0.0}, {"v": 0.0}, {"v": 7}, {"v": 10}, {"v": 5}, {"v": 1.03}, {"v": 0.56}]}
+]});
