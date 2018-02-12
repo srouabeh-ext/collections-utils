@@ -24,8 +24,8 @@ public final class ListUtils {
 	}
 
 	/**
-	 * Partition the {@link List} {@code inputList} into {@code subLists} using the
-	 * {@code subListMaxSize} parameter.
+	 * Partition the {@link List} {@code inputList} into consecutive
+	 * {@code subLists} using the {@code subListMaxSize} parameter.
 	 * <p>
 	 * For example, partitioning {@code [1, 2, 3, 4, 5]} with a
 	 * {@code subListMaxSize} of 2 will return {@code [[1, 2], [3, 4], [5]]}
@@ -48,19 +48,13 @@ public final class ListUtils {
 		checkArguments(subListMaxSize <= 0, NEGATIVE_SUB_LIST_MAX_SIZE_MSG);
 
 		final List<List<T>> listOfSubLists = new ArrayList<>();
-
-		List<T> subList = new ArrayList<>();
-		int index = 1;
 		final Iterator<T> iterator = inputList.iterator();
 		while (iterator.hasNext()) {
-			subList.add(iterator.next());
-			if (index % subListMaxSize == 0) {
-				listOfSubLists.add(subList);
-				subList = new ArrayList<>();
-			} else if (index == inputList.size()) {
-				listOfSubLists.add(subList);
+			final List<T> subList = new ArrayList<>();
+			for (int i = 0; iterator.hasNext() && i < subListMaxSize; i++) {
+				subList.add(iterator.next());
 			}
-			index++;
+			listOfSubLists.add(subList);
 		}
 		return listOfSubLists;
 	}
